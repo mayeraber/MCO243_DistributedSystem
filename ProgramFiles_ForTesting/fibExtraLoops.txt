@@ -1,0 +1,171 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+public class SLAVEtwo1
+{
+/*
+	public static void main(String[] args)
+	{
+		
+		Random random= new Random();
+		int numToInsert;
+		ArrayList<Integer> elements= new ArrayList<>();
+		SkipList<Integer> skipList4a= new SkipList<>(.4);
+		SkipList<Integer> skipList4b= new SkipList<>(.4);
+		SkipList<Integer> skipList4c= new SkipList<>(.4);
+		SkipList<Integer> skipList5a= new SkipList<>(.5);
+		SkipList<Integer> skipList5b= new SkipList<>(.5);
+		SkipList<Integer> skipList5c= new SkipList<>(.5);
+		SkipList<Integer> skipList6a= new SkipList<>(.6);
+		SkipList<Integer> skipList6b= new SkipList<>(.6);
+		SkipList<Integer> skipList6c= new SkipList<>(.6);
+		
+		System.out.println("---------------Skip list with probability of .4 Inserting 10 elements---------------");
+		for(int i=1; i<=10; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			skipList4a.insert(new Integer(numToInsert),true);
+		}
+		for(int j=0; j<20; j++)
+			skipList4a.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList4a.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .4 Inserting 100 elements---------------");
+		elements.clear();
+		for(int i=1; i<=100; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%5==0)
+				skipList4b.insert(new Integer(numToInsert),true);
+			else 
+				skipList4b.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList4b.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList4b.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .4 Inserting 1000 elements---------------");
+		elements.clear();
+		for(int i=1; i<=1000; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%20==0)
+				skipList4c.insert(new Integer(numToInsert),true);
+			else 
+				skipList4c.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList4c.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList4c.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .5 Inserting 10 elements---------------");
+		elements.clear();
+		for(int i=1; i<=10; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			skipList5a.insert(new Integer(numToInsert),true);		
+		}
+		for(int j=0; j<20; j++)
+			skipList5a.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList5a.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .5 Inserting 100 elements---------------");
+		elements.clear();
+		for(int i=1; i<=100; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%5==0)
+				skipList5b.insert(new Integer(numToInsert),true);
+			else 
+				skipList5b.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList5b.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList5b.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .5 Inserting 1000 elements---------------");
+		elements.clear();
+		for(int i=1; i<=1000; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%20==0)
+				skipList5c.insert(new Integer(numToInsert),true);
+			else 
+				skipList5c.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList5c.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList5c.search(random.nextInt(1000)+10000, true);
+		
+		
+		System.out.println("\n\n---------------Skip list with probability of .6 Inserting 10 elements---------------");
+		elements.clear();
+		for(int i=1; i<=10; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			skipList6a.insert(new Integer(numToInsert),true);			
+		}
+		for(int j=0; j<20; j++)
+			skipList6a.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList6a.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .6 Inserting 100 elements---------------");
+		elements.clear();
+		for(int i=1; i<=100; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%5==0)
+				skipList6b.insert(new Integer(numToInsert),true);
+			else 
+				skipList6b.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList6b.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList6b.search(random.nextInt(1000)+10000, true);
+		
+		System.out.println("\n\n---------------Skip list with probability of .6 Inserting 1000 elements---------------");
+		elements.clear();
+		for(int i=1; i<=1000; i++)
+		{
+			numToInsert= random.nextInt(10000)+1;
+			elements.add(numToInsert);
+			if(i%20==0)
+				skipList6c.insert(new Integer(numToInsert),true);
+			else 
+				skipList6c.insert(new Integer(numToInsert),false);
+		}
+		for(int j=0; j<20; j++)
+			skipList6c.search(elements.get(random.nextInt(10)), true);
+		for(int k=0; k<10; k++)
+			skipList6c.search(random.nextInt(1000)+10000, true);
+	
+	System.out.println("hi from oops!!");
+*/
+ 	public static long fibonacci(int n) {
+        	if (n <= 1) return n;
+        	else return fibonacci(n-1) + fibonacci(n-2);
+    	}
+
+    	public static void main(String[] args) {
+        	//int n = 15;
+        	for (int i=1; i<=15; i++)
+            	System.out.println(i + ": " + fibonacci(i));
+    }
+}
+	
